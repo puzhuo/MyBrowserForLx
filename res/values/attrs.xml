@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="FavGrid"> 
+        <attr name="columnCount" format="integer"/> 
+        <attr name="rowCount" format="integer"/>
+        <attr name="horizontalGap" format="dimension"/>
+        <attr name="verticalGap" format="dimension"/>
+        <attr name="cellWidth" format="dimension"/>
+        <attr name="cellHeight" format="dimension"/> 
+    </declare-styleable> 
+    
+    <declare-styleable name="NaviItemLayout">
+        <attr name="countInRow" format="integer"/>
+        <attr name="textSize" format="reference"/>
+        <attr name="highlightBitmap" format="reference"/>
+        <attr name="defaultTextColor" format="reference"/>
+        <attr name="withImage" format="boolean"/>
+        <attr name="openDrawable" format="reference"/>
+        <attr name="closeDrawable" format="reference"/>
+    </declare-styleable>
+    
+    <declare-styleable name="SeekbarPreference"> 
+        <attr name="defaultValue" format="integer"/> 
+        <attr name="max" format="integer"/>
+        <attr name="title" format="string"/>
+        <attr name="summary" format="string"/> 
+    </declare-styleable>
+</resources>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@drawable/urlbar_popup_bg"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal" >
+    
+    <TextView
+        android:background="@drawable/url_pop_item_bg"
+        android:id="@+id/url_menu_barcode"
+        android:text="@string/url_pop_menu_barcode"
+        android:drawableTop="@drawable/urlbar_popup_barcode"
+        android:layout_gravity="center_vertical"
+		android:gravity="center"
+        android:layout_width="0.0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content" />
+    
+</LinearLayout>

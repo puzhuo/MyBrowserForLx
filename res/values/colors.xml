@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="black">#ff000000</color>
+    <color name="blue">#ff68C7C9</color>
+    <color name="purple_blue">#ff2D8DE9</color>
+    <color name="transparent">#00000000</color>
+    <color name="text_color_normal">#ff4d4d4d</color>
+    <color name="menubar_tabcenter_text_d">#ffffffff</color>
+    <color name="menubar_tabcenter_text_p">#ff96c5f4</color>
+    <color name="white">#ffffffff</color>
+    <color name="gray">#ff888888</color>
+    <color name="progress_bar_color">#ff3BE600</color>
+    <color name="shadow_black">#4d000000</color>
+    <color name="url_pop_pressed_color">#ffdaecff</color>
+    <color name="item_click">#9ac1e0ff</color>
+    <color name="download_text_color1">#ff555555</color>
+    <color name="viewfinder_frame">#ff000000</color>
+    <color name="viewfinder_laser">#ffff0000</color>
+    <color name="viewfinder_mask">#60000000</color>
+    <color name="result_view">#b0000000</color>
+    <color name="possible_result_points">#c0ffff00</color>
+    <color name="menubar_background">#ff3781db</color>
+
+</resources>

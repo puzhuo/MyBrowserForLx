@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+    <RelativeLayout
+        android:background="@drawable/urlbar_bg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+        
+        <CheckBox
+            android:id="@+id/fav_manage_checkbox"
+            android:background="@drawable/check_box_bg"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:button="@null"
+            android:layout_marginLeft="7.0dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        
+        <TextView
+            style="@style/title_text_mid"
+            android:textColor="#ffffffff"
+            android:textSize="22.0sp"
+            android:layout_centerInParent="true"
+            android:text="@string/fav_manage_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        
+    </RelativeLayout>
+    
+    <ListView
+        android:id="@+id/fav_manage_list"
+        android:layout_weight="1"
+        android:layout_height="0.0dp"
+        android:layout_width="match_parent" />
+    
+    <include
+        android:layout_weight="1"
+        android:layout_height="0.0dp"
+        android:layout_width="match_parent"
+        android:id="@+id/empty"
+        android:visibility="gone"
+        layout="@layout/fav_his_empty_view" />
+    
+    <LinearLayout
+        style="@style/fillx"
+        android:orientation="horizontal"
+        android:background="@color/black" >
+
+        <TextView
+            android:id="@+id/fav_manage_delete"
+            style="@style/menu_text"
+            android:padding="7.0dp"
+            android:singleLine="true"
+            android:layout_gravity="center_vertical"
+            android:text="@string/fav_his_manage" />
+        
+        <TextView
+            android:id="@+id/fav_manage_back"
+            style="@style/menu_text"
+            android:padding="7.0dp"
+            android:singleLine="true"
+            android:layout_gravity="center_vertical"
+            android:text="@string/back_text" />
+        
+    </LinearLayout>
+
+</LinearLayout>

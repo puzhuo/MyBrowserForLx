@@ -1,0 +1,28 @@
+<resources>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    
+    <dimen name="title_bar_width">400dp</dimen>
+    <dimen name="title_bar_left_padding">7dp</dimen>
+    <dimen name="title_bar_search_width">53dp</dimen>
+    
+    <dimen name="grid_view_column_width">152dp</dimen>
+    <dimen name="grid_view_vertical_space">10.0dp</dimen>
+    <dimen name="grid_view_horizontal_space">10.0dp</dimen>
+    <dimen name="grid_view_layout_margin">12.0dp</dimen>
+    
+    <dimen name="navi_item_text_size">16.0sp</dimen>
+    <dimen name="navi_item_padding">12.0dp</dimen>
+    <dimen name="navi_item_image_width">30.0dp</dimen>
+    
+    <dimen name="fav_item_image_size">50.0dp</dimen>
+    <dimen name="fav_item_text_size">12.0sp</dimen>
+    
+    <dimen name="viewpager_indicator_margin">8.0dp</dimen>
+    
+    <dimen name="tab_center_arrow_margin_top">16.0dp</dimen>
+    <dimen name="navi_item_icon_size">50.0dp</dimen>
+    <dimen name="preference_widget_width">56dp</dimen>
+</resources>

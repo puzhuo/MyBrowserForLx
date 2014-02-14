@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/menu_slider_content" >
+
+    <LinearLayout
+		android:padding="3.0dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/menu_pop_add_fav"
+            style="@style/menu_item_text"
+            android:drawableTop="@drawable/menu_pop_add_fav"
+            android:text="@string/menu_pop_add_fav" />
+
+        <TextView
+            android:id="@+id/menu_pop_open_fav"
+            style="@style/menu_item_text"
+            android:drawableTop="@drawable/menu_container_bookmark"
+            android:text="@string/menu_pop_open_fav" />
+
+        <TextView
+            android:id="@+id/menu_pop_refresh"
+            style="@style/menu_item_text"
+            android:drawableTop="@drawable/menu_pop_refresh"
+            android:text="@string/menu_pop_refresh" />
+
+        <TextView
+            android:id="@+id/menu_pop_download"
+            style="@style/menu_item_text"
+            android:drawableTop="@drawable/menu_container_download"
+            android:text="@string/menu_pop_download" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:padding="3.0dp"
+        android:layout_marginTop="8.0dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/menu_pop_no_image"
+            style="@style/menu_item_text"
+            android:drawableTop="@drawable/menu_pop_no_image" />
+
+        <TextView
+            android:id="@+id/menu_pop_find_on_page"
+            style="@style/menu_item_text"
+            android:drawableTop="@drawable/menu_pop_find_on_page"
+            android:text="@string/menu_pop_find_on_page" />
+
+        <TextView
+            android:id="@+id/menu_pop_setting"
+            style="@style/menu_item_text"
+            android:drawableTop="@drawable/menu_container_setting"
+            android:text="@string/menu_pop_setting" />
+        
+        <TextView
+            android:id="@+id/menu_pop_quit"
+            style="@style/menu_item_text"
+            android:drawableTop="@drawable/menu_container_exit"
+            android:text="@string/menu_pop_quit" />
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:title="@string/setting_preference_screen" >
+
+    <!-- 清理缓存 -->
+
+    <com.fujun.browser.view.YesNoPreference
+        android:dialogMessage="@string/setting_clear_cache_dialog_message"
+		android:dialogIcon="@android:drawable/ic_dialog_alert"
+        android:key="clean_cache"
+        android:summary="@string/setting_clear_cache_message"
+        android:title="@string/setting_clear_cache_title" />
+
+    <CheckBoxPreference
+        android:defaultValue="true"
+        android:key="show_security"
+        android:summaryOff="@string/setting_show_security_message"
+        android:summaryOn="@string/setting_show_security_message"
+        android:title="@string/setting_show_security_title" />
+
+    <PreferenceCategory android:title="@string/pref_category_cookie" >
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="accept_cookies"
+            android:summaryOff="@string/setting_accept_cookies_message"
+            android:summaryOn="@string/setting_accept_cookies_message"
+            android:title="@string/setting_accept_cookies_title" />
+
+        <com.fujun.browser.view.YesNoPreference
+            android:dialogMessage="@string/setting_clear_cookie_dialog_message"
+			android:dialogIcon="@android:drawable/ic_dialog_alert"
+            android:key="clean_cookie"
+            android:summary="@string/setting_clear_cookie_message"
+            android:title="@string/setting_clear_cookie_title" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/pref_category_passwd" >
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="save_passwd"
+            android:summaryOff="@string/setting_save_passwd_message"
+            android:summaryOn="@string/setting_save_passwd_message"
+            android:title="@string/setting_save_passwd_title" />
+
+        <com.fujun.browser.view.YesNoPreference
+            android:key="clear_passwd"
+            android:summary="@string/setting_clear_passwd_message"
+            android:title="@string/setting_clear_passwd_title"
+            android:dialogIcon="@android:drawable/ic_dialog_alert"
+            android:dialogMessage="@string/setting_clear_passwd_dialog_message" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/pref_category_form" >
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="save_form"
+            android:summaryOff="@string/setting_save_form_message"
+            android:summaryOn="@string/setting_save_form_message"
+            android:title="@string/setting_save_form_title" />
+
+        <com.fujun.browser.view.YesNoPreference
+            android:dialogMessage="@string/setting_clear_form_dialog_message"
+			android:dialogIcon="@android:drawable/ic_dialog_alert"
+            android:key="clear_form"
+            android:summary="@string/setting_clear_form_message"
+            android:title="@string/setting_clear_form_title" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/pref_category_location" >
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="enable_location"
+            android:summaryOff="@string/setting_enable_location_message"
+            android:summaryOn="@string/setting_enable_location_message"
+            android:title="@string/setting_enable_location_title" />
+
+        <com.fujun.browser.view.YesNoPreference
+            android:dialogMessage="@string/setting_unenable_location_dialog_message"
+			android:dialogIcon="@android:drawable/ic_dialog_alert"
+            android:key="unenable_location"
+            android:summary="@string/setting_unenable_location_message"
+            android:title="@string/setting_unenable_location_title" />
+    </PreferenceCategory>
+
+</PreferenceScreen>

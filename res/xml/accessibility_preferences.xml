@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2011 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:SeekPreference="http://schemas.android.com/apk/res/com.kukuai.daohang" >
+
+    <CheckBoxPreference android:key="force_userscalable"
+        android:title="@string/pref_force_userscalable"
+        android:summary="@string/pref_force_userscalable_summary"
+        android:defaultValue="false" />
+
+    <PreferenceCategory android:title="@string/pref_font_size_category">
+        <com.fujun.browser.view.FontSizePreview
+            android:title="@string/preview" />
+
+        <com.fujun.browser.view.SeekbarPreference
+            android:key="text_zoom"
+            SeekPreference:title="@string/pref_text_zoom"
+            SeekPreference:defaultValue="10"
+            SeekPreference:max="30" />
+
+        <com.fujun.browser.view.SeekbarPreference
+            android:key="double_tap_zoom"
+            SeekPreference:title="@string/pref_zoom_on_double_tap"
+            SeekPreference:defaultValue="5"
+            SeekPreference:max="10" />
+
+        <com.fujun.browser.view.SeekbarPreference
+            android:key="min_font_size"
+            SeekPreference:title="@string/pref_min_font_size"
+            SeekPreference:defaultValue="0"
+            SeekPreference:max="20" />
+
+    </PreferenceCategory>
+
+    <!-- <PreferenceCategory android:title="@string/pref_inverted_category">
+        <com.android.browser.preferences.InvertedContrastPreview
+            android:title="@string/preview" />
+
+        <CheckBoxPreference
+            android:key="inverted"
+            android:defaultValue="false"
+            android:title="@string/pref_inverted"
+            android:summary="@string/pref_inverted_summary" />
+
+        <com.fujun.browser.view.SeekbarPreference
+            android:key="inverted_contrast"
+            SeekPreference:title="@string/pref_inverted_contrast"
+            android:dependency="inverted"
+            SeekPreference:defaultValue="0"
+            SeekPreference:max="20" />
+
+    </PreferenceCategory> -->
+
+</PreferenceScreen>

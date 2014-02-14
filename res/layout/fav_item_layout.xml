@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/common_paragraph_bg"
+    android:clickable="true"
+    android:padding="8.0dp" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <ImageView
+            android:layout_gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="0.0dp"
+            android:layout_weight="1"
+            android:scaleType="center"
+            android:contentDescription="@string/app_name"
+            android:id="@+id/index_fav_image" />
+        
+        <TextView
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/index_fav_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="6.0dip"
+            android:clickable="false"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:paddingLeft="6.0dip"
+            android:paddingRight="6.0dip"
+            android:singleLine="true"
+            android:textColor="@color/text_color_normal"
+            android:textSize="12.0sp" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/index_fav_pin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:clickable="false"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/navigation_frequentvisit_pined"
+        android:visibility="visible" />
+
+</RelativeLayout>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:padding="12.0dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    
+    <TextView
+        android:textColor="#ffffffff"
+        android:textSize="20.0sp"
+        android:id="@+id/delete_confirm_dialog_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    
+    <CheckBox
+        android:layout_marginTop="5.0dp"
+        android:layout_alignLeft="@id/delete_confirm_dialog_title"
+        android:layout_below="@id/delete_confirm_dialog_title"
+        android:background="@drawable/check_box_bg"
+        android:button="@null"
+        android:id="@+id/delete_confirm_dialog_checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    
+    <TextView
+        android:layout_marginTop="5.0dp"
+        android:textColor="#ffffffff"
+        android:gravity="center"
+        android:text="@string/also_delete_file"
+        android:layout_below="@id/delete_confirm_dialog_title"
+        android:layout_marginLeft="5.0dp"
+        android:layout_toRightOf="@id/delete_confirm_dialog_checkbox"
+        android:textSize="20.0sp"
+        android:id="@+id/delete_confirm_dialog_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</RelativeLayout>

@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <RelativeLayout
+        android:id="@+id/top"
+        style="@style/fillx"
+        android:background="@drawable/urlbar_bg" >
+
+        <ImageView
+            android:id="@+id/add_navi_back"
+            style="@style/wrap"
+            android:layout_centerVertical="true"
+            android:background="@drawable/title_back"
+            android:contentDescription="@string/app_name" />
+
+        <TextView
+            android:id="@+id/add_navi_title"
+            style="@style/title_text"
+            android:text="@string/add_navi_title" />
+
+        <TextView
+            android:id="@+id/add_navi_right"
+            style="@style/wrap"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/title_submit" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <RelativeLayout
+            android:id="@+id/input_area"
+            style="@style/fillx"
+            android:layout_marginLeft="10.0dip"
+            android:layout_marginRight="10.0dip" >
+
+            <TextView
+                android:id="@+id/name_title"
+                style="@style/normal_text_black"
+                android:layout_alignBaseline="@+id/add_navi_name"
+                android:layout_alignBottom="@+id/add_navi_name"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="3.0dip"
+                android:gravity="center"
+                android:text="@string/title_name"
+                android:textSize="17.0sp" />
+
+            <TextView
+                android:id="@+id/url_title"
+                style="@style/normal_text_black"
+                android:layout_alignBaseline="@+id/add_navi_url"
+                android:layout_alignBottom="@+id/add_navi_url"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="3.0dip"
+                android:layout_marginTop="5.0dip"
+                android:gravity="center"
+                android:text="@string/url_name"
+                android:textSize="17.0sp" />
+
+            <EditText
+                android:id="@id/add_navi_name"
+                style="@style/fillx"
+                android:layout_toRightOf="@id/name_title"
+                android:background="@drawable/urlbar_edittext_real"
+                android:capitalize="sentences"
+                android:gravity="center_vertical"
+                android:imeOptions="actionDone"
+                android:singleLine="true"
+                android:textColor="@color/black"
+                android:textCursorDrawable="@null" />
+
+            <EditText
+                android:id="@id/add_navi_url"
+                style="@style/fillx"
+                android:layout_below="@id/add_navi_name"
+                android:layout_marginTop="5.0dip"
+                android:layout_toRightOf="@id/url_title"
+                android:background="@drawable/urlbar_edittext_real"
+                android:capitalize="sentences"
+                android:gravity="center_vertical"
+                android:imeOptions="actionDone"
+                android:singleLine="true"
+                android:textColor="@color/black"
+                android:textCursorDrawable="@null" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/switcher"
+            style="@style/fillx"
+            android:layout_below="@id/input_area"
+            android:background="@drawable/urlbar_bg"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingLeft="5.0dip"
+            android:paddingRight="5.0dip" >
+
+            <TextView
+                android:id="@+id/switch_recommended_website"
+                style="@style/title_text_mid_black"
+                android:layout_weight="1.0"
+                android:text="@string/recommended_website" />
+
+            <TextView
+                android:id="@+id/switch_favorite"
+                style="@style/title_text_mid_black"
+                android:layout_weight="1.0"
+                android:text="@string/favorite" />
+
+            <TextView
+                android:id="@+id/switch_history"
+                style="@style/title_text_mid_black"
+                android:layout_weight="1.0"
+                android:text="@string/history" />
+        </LinearLayout>
+    </RelativeLayout>
+    
+    <android.support.v4.view.ViewPager
+        android:id="@+id/add_navi_pager"
+        android:layout_height="0.0dp"
+        android:layout_weight="1"
+        android:layout_width="match_parent" />
+
+</LinearLayout>

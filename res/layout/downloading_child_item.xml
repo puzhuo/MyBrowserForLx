@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/item_click"
+    android:clickable="false"
+    android:orientation="horizontal"
+    android:padding="8.0dip" >
+
+    <ImageView
+        android:id="@+id/download_item_icon"
+        style="@style/wrap"
+        android:layout_gravity="center_vertical"
+        android:contentDescription="@string/app_name" />
+
+    <LinearLayout
+        style="@style/fillx"
+        android:layout_width="0.0dip"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="1.0"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/download_title"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:gravity="left"
+            android:singleLine="true"
+            android:textColor="@drawable/text_color1"
+            android:textSize="15.0sp" />
+
+        <ProgressBar
+            android:id="@+id/download_progressbar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="5.0dip"
+            android:progressDrawable="@drawable/download_progress_bar" />
+
+        <LinearLayout
+            style="@style/fillx"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/download_text"
+                style="@style/wrap"
+                android:ellipsize="marquee"
+                android:singleLine="true"
+                android:textSize="12.0sp" />
+
+            <TextView
+                android:id="@+id/download_speed"
+                style="@style/wrap"
+                android:layout_marginLeft="15.0dp"
+                android:ellipsize="marquee"
+                android:singleLine="true"
+                android:textSize="12.0sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/download_persent"
+        android:layout_width="40.0dip"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right|center"
+        android:layout_marginLeft="8.0dip"
+        android:textAppearance="?android:textAppearanceSmall"
+        android:textColor="@drawable/text_color3" />
+
+</LinearLayout>

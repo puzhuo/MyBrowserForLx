@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.fujun.browser.view.NaviItemLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:naviitem="http://schemas.android.com/apk/res/com.kukuai.daohang"
+    android:padding="@dimen/navi_item_padding"
+    naviitem:countInRow="7"
+    naviitem:withImage="true"
+    naviitem:openDrawable="@drawable/indicator_open"
+    naviitem:closeDrawable="@drawable/indicator_close"
+    naviitem:textSize="@dimen/navi_item_text_size"
+    naviitem:highlightBitmap="@drawable/common_paragraph_bg_p"
+    naviitem:defaultTextColor="@color/text_color_normal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" />

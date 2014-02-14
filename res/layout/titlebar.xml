@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
+    	
+    <LinearLayout
+        android:id="@+id/titlebar_url_title"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent" >
+        
+        <ImageButton
+            android:layout_gravity="center_vertical"
+            android:contentDescription="@string/app_name"
+            android:id="@+id/titlebar_fav_btn"
+            android:background="@drawable/fav_btn_selector"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        
+        <TextView
+            android:id="@+id/titlebar_url_fake"
+            android:gravity="center_vertical"
+            android:textSize="16.0sp"
+            android:background="@drawable/urlbar_edittext_fake"
+            android:layout_gravity="center_vertical"
+            android:hint="@string/titlebar_url_edit_hint"
+            android:paddingLeft="@dimen/title_bar_left_padding"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+        
+        <EditText
+            android:paddingLeft="@dimen/title_bar_left_padding"
+            android:layout_gravity="center_vertical"
+            android:singleLine="true"
+            android:background="@drawable/urlbar_edittext_fake"
+            android:gravity="center_vertical"
+            android:textSize="16.0sp"
+            android:hint="@string/titlebar_url_edit_hint"
+            android:id="@+id/titlebar_edit"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+        
+        <RelativeLayout
+            android:id="@+id/titlebar_url_real"
+            android:background="@drawable/urlbar_edittext_fake"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" >
+            
+            <ImageButton
+                android:id="@+id/titlebar_refresh"
+                android:layout_alignParentRight="true"
+                android:contentDescription="@string/app_name"
+                android:background="@drawable/urlbar_refresh_selector"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content" />
+            
+            <TextView
+                android:id="@+id/titlebar_url"
+                android:textSize="16.0sp"
+                android:singleLine="true"
+                android:layout_marginLeft="5.0dp"
+                android:layout_marginRight="5.0dp"
+                android:layout_toLeftOf="@id/titlebar_refresh"
+                android:layout_alignParentLeft="true"
+				android:layout_centerVertical="true"
+                android:ellipsize="none"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            
+        </RelativeLayout>
+        
+        <Button
+            android:id="@+id/titlebar_search"
+            android:textSize="16.0sp"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/title_bar_left_padding"
+            android:background="@drawable/urlbar_edittext_fake"
+            android:layout_gravity="center_vertical"
+            android:hint="@string/titlebar_goto"
+            android:layout_width="@dimen/title_bar_search_width"
+            android:layout_height="wrap_content" />
+        
+        <ImageButton
+            android:id="@+id/titlebar_more_btn"
+            android:layout_gravity="center_vertical"
+            android:contentDescription="@string/app_name"
+            android:background="@drawable/more_btn_selector"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        
+    </LinearLayout>
+    
+    <ProgressBar android:id="@+id/progress"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="2.0dp"
+        android:visibility="gone"
+        android:max="100" />
+
+</LinearLayout>

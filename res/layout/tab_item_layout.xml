@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/tab_item_bg_selector" >
+
+    <LinearLayout
+        style="@style/fillx"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="35.0dip"
+        android:layout_marginRight="50.0dip"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/tab_item_title"
+            style="@style/fillx"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:textColor="@color/white"
+            android:textSize="15.0sp" />
+
+        <TextView
+            android:id="@+id/tab_item_url"
+            style="@style/fillx"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:textColor="@color/gray"
+            android:textSize="15.0sp" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/tab_item_icon"
+        android:contentDescription="@string/app_name"
+        android:layout_width="16.0dip"
+        android:layout_height="16.0dip"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="10.0dip" />
+
+    <ImageView
+        android:id="@+id/tab_item_close"
+        style="@style/wrap"
+        android:contentDescription="@string/app_name"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:gravity="center_vertical"
+        android:padding="12.0dip"
+        android:src="@drawable/tab_item_close_selector" />
+
+</RelativeLayout>

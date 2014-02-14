@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">联想网址导航</string>
+    <string name="action_settings">Settings</string>
+    <string name="action_delete">删除</string>
+    <string name="action_edit">编辑</string>
+    <string name="ok">确定</string>
+    <string name="cancel">取消</string>
+    <string name="titlebar_input_url">输入网址</string>
+    <string name="titlebar_search">搜索</string>
+    <string name="titlebar_goto">转到</string>
+    <string name="titlebar_url_edit_hint">输入网址或搜索内容</string>
+    <string name="test_words">测试用字</string>
+    <string name="video_error">视频错误</string>
+    <string name="loading_video">正在载入视频, 请稍侯</string>
+    <string name="default_tab_title">浦卓浏览器</string>
+    <string name="tab_center_create_new_tab">新建标签页</string>
+    <string name="tab_center_has_reached_max_count">标签页已满</string>
+    <string name="back_notice_text">再按一次返回键退出浏览器</string>
+    <string name="fav_title_text">收藏</string>
+    <string name="his_title_text">历史</string>
+    <string name="fav_his_manage">管理</string>
+    <string name="clear_text">清空</string>
+    <string name="back_text">返回</string>
+    <string name="empty_fav_text">没有收藏记录</string>
+    <string name="empty_his_text">没有历史记录</string>
+    <string name="clear_his_dialog_title">清空历史列表</string>
+    <string name="clear_his_dialog_message">确定要清空历史记录吗</string>
+    <string name="dialog_positive_queding">确定</string>
+    <string name="dialog_negative_cancel">取消</string>
+    <string name="fav_manage_title">收藏管理</string>
+    <string name="fav_manage_delete">删除(%1$d)</string>
+    <string name="url_pop_menu_barcode">二维码</string>
+    <string name="url_pop_menu_add_fav">加入收藏</string>
+    <string name="url_pop_menu_open_fav_his">收藏/历史</string>
+    <string name="url_pop_menu_add_navi">加入导航</string>
+    <string name="url_pop_menu_send_desk">发至桌面</string>
+    <string name="add_fav_fail">收藏添加失败</string>
+    <string name="add_fav_ok">收藏添加成功</string>
+    <string name="add_fav_already_exist">收藏已存在</string>
+    <string name="add_navi_fail">导航添加失败</string>
+    <string name="add_navi_ok">导航添加成功</string>
+    <string name="navi_to_limit">导航页面已满，无法继续添加</string>
+    <string name="add_navi_already_exist">导航已存在</string>
+    <string name="send_desk_done">发送至桌面</string>
+    <string name="download_text">下载管理</string>
+    <string name="download_file_text">文件管理</string>
+    <string name="new_text">新建</string>
+    <string name="downloading_text">正在下载(%1$s)</string>
+    <string name="downloaded_text">下载完毕(%1$s)</string>
+    <string name="download_pause">下载已暂停</string>
+    <string name="download_downloading">正在下载</string>
+    <string name="download_wait">已加入下载队列</string>
+    <string name="download_size_text">%1$s/%2$s</string>
+    <string name="download_error">下载错误</string>
+    <string name="no_sdcard_no_download">当前没有sd卡，无法下载</string>
+    <string name="download_sdcard_busy_dlg_title">SD 卡不可用</string>
+    <string name="download_sdcard_busy_dlg_msg">SD 卡正忙。要允许下载，请在通知中选择“关闭 USB 存储”。</string>
+    <string name="download_no_sdcard_dlg_title">无 SD 卡</string>
+    <string name="download_no_sdcard_dlg_msg">需要有 SD 卡才能下载</string>
+    <string name="download_overlap_message">下载目录存在同名文件，确定覆盖？</string>
+    <string name="file_not_exsit_text">文件不存在</string>
+    <string name="file_is_waiting">文件正在等待下载，长按可删除</string>
+    <string name="file_downloads_error">文件下载出现错误，长按可删除</string>
+    <string name="delete_file">删除记录</string>
+    <string name="clear_file">清空记录</string>
+    <string name="also_delete_file">同时删除源文件</string>
+    <string name="sure_to_delete_file">确定删除"%1$s"?</string>
+    <string name="clear_all_downloaded_files">清空所有已下载任务（共%1$d项）吗？</string>
+    <string name="clear_all_downloading_files">清空所有正在下载任务（共%1$d项）吗？</string>
+    <string name="menu_pop_add_fav">加入收藏</string>
+    <string name="menu_pop_open_fav">收藏/历史</string>
+    <string name="menu_pop_refresh">刷新</string>
+    <string name="menu_pop_download">下载管理</string>
+    <string name="menu_pop_quit">退出</string>
+    <string name="menu_pop_save_page">保存网页</string>
+    <string name="menu_pop_find_on_page">页内查找</string>
+    <string name="menu_pop_setting">设置</string>
+    <string name="menu_pop_with_image">有图模式</string>
+    <string name="menu_pop_without_image">无图模式</string>
+    <string name="find_dialog_content">请输入想查找的关键字:</string>
+    <string name="find_nothing_match">未找到匹配项</string>
+    <string name="find_sth_match">共找到%1$d项，已全部高亮显示</string>
+    <string name="find_dot">页内查找</string>
+    <string name="setting_text">设置</string>
+    <string name="pref_security_title">隐私与安全</string>
+    <string name="pref_accessibility_title">辅助功能</string>
+    <string name="pref_extras_title">高级</string>
+    <string name="pref_about_title">关于</string>
+    <string name="pref_category_cookie">Cookie</string>
+    <string name="pref_category_passwd">密码</string>
+    <string name="pref_category_form">表单数据</string>
+    <string name="pref_category_location">位置</string>
+    <string name="setting_preference_screen">setting_preference_screen</string>
+    <string name="setting_clear_cache_message">清除存储在本地缓存中的内容和数据库</string>
+    <string name="setting_clear_cache_title">清除缓存</string>
+    <string name="setting_clear_cache_dialog_message">要删除本地缓存的内容和数据库吗？</string>
+    <string name="cache_cleaned">已清除缓存</string>
+    <string name="setting_category_privacy">隐私与安全</string>
+    <string name="setting_accept_cookies_title">接受Cookie</string>
+    <string name="setting_accept_cookies_message">允许网站保存并读取 Cookie 数据</string>
+    <string name="setting_clear_cookie_title">清除 Cookie</string>
+    <string name="setting_clear_cookie_dialog_message">要清除所有 Cookie吗？</string>
+    <string name="cookie_cleaned">已清除保存的Cookie</string>
+    <string name="setting_clear_cookie_message">清除所有浏览器 Cookie</string>
+    <string name="setting_save_passwd_title">记住密码</string>
+    <string name="setting_save_passwd_message">保存网站的用户名和密码</string>
+    <string name="setting_clear_passwd_title">清除密码</string>
+    <string name="setting_clear_passwd_dialog_message">要清除所有保存的密码吗？</string>
+    <string name="passwd_cleaned">已清除保存的密码</string>
+    <string name="setting_clear_passwd_message">清除所有已保存的密码</string>
+    <string name="setting_save_form_title">记住表单数据</string>
+    <string name="setting_save_form_message">记住我在表单中输入的数据以便以后使用</string>
+    <string name="setting_clear_form_title">清除表单数据</string>
+    <string name="setting_clear_form_dialog_message">要删除所有保存的表单数据吗？</string>
+    <string name="setting_clear_form_message">清除所有已保存的表单数据</string>
+    <string name="form_cleaned">已清除保存的表单数据</string>
+    <string name="setting_enable_location_title">启用定位功能</string>
+    <string name="setting_enable_location_message">允许网站请求访问您的位置</string>
+    <string name="setting_unenable_location_title">取消定位权限</string>
+    <string name="setting_unenable_location_dialog_message">要清除网站获取位置信息的权限吗？</string>
+    <string name="setting_unenable_location_message">为全部网站清除位置接入</string>
+    <string name="location_cleaned">已清除位置接入</string>
+    <string name="setting_show_security_title">显示安全警告</string>
+    <string name="setting_show_security_message">如果有网站安全问题则显示警告</string>
+    <string name="pref_min_font_size">"字体大小下限"</string>
+    <string name="pref_min_font_size_value">"%1$d PT"</string>
+    <string name="pref_text_zoom">"文字缩放"</string>
+    <string name="pref_zoom_on_double_tap">"点按两次进行缩放"</string>
+    <string name="pref_force_userscalable">"强制启用缩放"</string>
+    <string name="pref_force_userscalable_summary">"替换网站的请求以控制缩放行为"</string>
+    <string name="pref_inverted_category">"屏幕反色显示"</string>
+    <string name="pref_inverted">"反色显示"</string>
+    <string name="pref_inverted_summary">"黑色会变成白色，反之亦然"</string>
+    <string name="pref_inverted_contrast">"对比度"</string>
+    <string name="pref_default_zoom">"默认缩放设置"</string>
+    <string name="pref_font_size_category">"文字大小"</string>
+    <string name="preview">"预览"</string>
+
+    <string-array name="pref_text_size_choices">
+        <item>"超小"</item>
+        <item>"小"</item>
+        <item>"正常"</item>
+        <item>"大"</item>
+        <item>"超大"</item>
+    </string-array>
+
+    <string name="pref_content_plugins">"启用插件"</string>
+
+    <string-array name="pref_content_plugins_choices">
+        <item>"始终启用（打开）"</item>
+        <item>"在需要时打开"</item>
+        <item>"关闭"</item>
+    </string-array>
+    <string-array name="pref_content_plugins_values" translatable="false">
+        <item>ON</item>
+        <item>ON_DEMAND</item>
+        <item>OFF</item>
+    </string-array>
+
+    <string name="pref_content_title">"网页内容"</string>
+
+    <string-array name="pref_default_zoom_choices">
+        <item>"远"</item>
+        <item>"中"</item>
+        <item>"近"</item>
+    </string-array>
+    <string-array name="pref_default_zoom_values" translatable="false">
+        <item>FAR</item>
+        <item>MEDIUM</item>
+        <item>CLOSE</item>
+    </string-array>
+
+    <string name="pref_default_zoom_dialogtitle">"默认缩放设置"</string>
+    <string name="pref_content_load_page">"以概览模式打开网页"</string>
+    <string name="pref_content_load_page_summary">"显示新打开网页的概览"</string>
+    <string name="pref_content_autofit">"自动调整页面"</string>
+    <string name="pref_content_autofit_summary">"调整网页版面以适合屏幕大小"</string>
+    <string name="pref_content_block_popups">"阻止弹出式窗口"</string>
+    <string name="pref_default_text_encoding" msgid="5742965543955558478">"文字编码"</string>
+
+    <string-array name="pref_default_text_encoding_choices">
+        <item>"拉丁语-1 (ISO-8859-1)"</item>
+        <item>"Unicode (UTF-8)"</item>
+        <item>"中文 (GBK)"</item>
+        <item>"中文 (Big5)"</item>
+        <item>"日语 (ISO-2022-JP)"</item>
+        <item>"日语 (SHIFT_JIS)"</item>
+        <item>"日语 (EUC-JP)"</item>
+        <item>"韩语 (EUC-KR)"</item>
+    </string-array>
+
+    <string name="pref_default_text_encoding_dialogtitle">"文字编码"</string>
+    <string name="pref_default_text_encoding_default">Latin-1</string>
+    <string-array name="pref_default_text_encoding_values">
+        <item>Latin-1</item>
+        <item>UTF-8</item>
+        <item>GBK</item>
+        <item>Big5</item>
+        <item>ISO-2022-JP</item>
+        <item>SHIFT_JIS</item>
+        <item>EUC-JP</item>
+        <item>EUC-KR</item>
+    </string-array>
+    <string name="pref_extras_reset_default_title">"重置默认设置"</string>
+    <string name="pref_extras_reset_default">"重置为默认设置"</string>
+    <string name="pref_extras_reset_default_summary">"还原默认设置"</string>
+    <string name="pref_extras_reset_default_dlg">"要将设置恢复为默认值吗？"</string>
+    <string name="pref_default_reset">已重置为默认设置</string>
+    
+	<string name="switched_to_with_image">已切换至有图模式</string>
+	<string name="switched_to_no_image">已切换至无图模式</string>
+	
+	<string name="fav_dialog_input_title">名称:</string>
+	<string name="fav_dialog_input_url">地址:</string>	
+	<string name="edit_navi">编辑导航</string>
+	<string name="edit_fav">编辑收藏</string>
+	<string name="add_navi">添加导航</string>
+	<string name="fill_all_first">请将资料填写完整，再按确认</string>
+	<string name="wrong_url">无效的url，无法打开页面</string>
+	<string name="feedback_text">问题反馈QQ: 2573940463</string>
+	<string name="version">版本号：</string>
+	<string name="network_disconnect">当前没有网络链接</string>
+	<string name="add_to_download">已加入下载队列</string>
+	
+	<string name="update_started">开始下载新版本</string>
+	<string name="ask_to_update">检测到有最新版本，是否更新？</string>
+	<string name="update_dialog_title">发现新版本</string>
+    <string name="update_dialog_message_size">新版本大小: </string>
+    <string name="update_dialog_positive_button">更新</string>
+    <string name="update_dialog_negative_button">取消</string>
+    <string name="no_sdcard_no_update">sd卡没有准备好，无法下载更新</string>
+	
+	<string name="navi_daohang">导航</string>
+	<string name="navi_baidu">百度</string>
+	<string name="navi_shop">购物</string>
+	<string name="navi_app">应用</string>
+	<string name="navi_novel">小说</string>
+	
+	<string name="page_loading">页面加载中...</string>
+	
+	<string name="notifi_download_start">开始下载</string>
+    <string name="notifi_downloading_content_text">正在连接</string>
+    <string name="notifi_download_done">下载完成</string>
+    
+    <string name="add_text">添加</string>
+    <string name="title_name">名称：</string>
+    <string name="url_name">地址：</string>
+    <string name="add_navi_title">添加网址</string>
+    <string name="recommended_website">推荐</string>
+    <string name="favorite">收藏</string>
+    <string name="history">历史</string>
+	<string name="enter_name">请输入名称</string>
+	<string name="enter_url">请输入网址</string>
+	<string name="illegal_url">您输入的网址不合法</string>
+</resources>

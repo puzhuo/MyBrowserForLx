@@ -1,0 +1,113 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--
+        Base application theme, dependent on API level. This theme is replaced
+        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+    -->
+    <style name="AppBaseTheme" parent="android:Theme.Light">
+        <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+        -->
+    </style>
+
+    <style name="SettingTheme" />
+    
+    <!-- Application theme. -->
+    <style name="AppTheme" parent="AppBaseTheme">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    </style>
+    
+    <style name="fillx" >
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    
+    <style name="wrap" >
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    
+    <style name="menu_text">
+        <item name="android:textSize">17.0sp</item>
+        <item name="android:textColor">@color/menu_text_color</item>
+        <item name="android:background">@drawable/menubar_item_click</item>
+        <item name="android:layout_width">0.0dip</item>
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:shadowColor">@color/shadow_black</item>
+        <item name="android:shadowDx">1.0</item>
+        <item name="android:shadowDy">1.0</item>
+        <item name="android:shadowRadius">1.0</item>
+        <item name="android:layout_weight">1.0</item>
+        <item name="android:gravity">center</item>
+    </style>
+    
+    <style name="title_text_black" parent="@style/title_text">
+        <item name="android:textColor">@color/second_title_text_color</item>
+        <item name="android:shadowColor">@color/white</item>
+    </style>
+    
+    <style name="title_text_mid_black" parent="@style/title_text_black">
+        <item name="android:textSize">17.0sp</item>
+    </style>
+    
+    <style name="title_text" parent="@style/normal_text_white">
+        <item name="android:textSize">20.0sp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:shadowColor">@color/shadow_black</item>
+        <item name="android:shadowDx">1.0</item>
+        <item name="android:shadowDy">1.0</item>
+        <item name="android:shadowRadius">1.0</item>
+        <item name="android:layout_centerInParent">true</item>
+    </style>
+    
+    <style name="fillall">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">fill_parent</item>
+    </style>
+    
+    <style name="title_text_mid">
+        <item name="android:textSize">17.0sp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/title_text_mid_color</item>
+        <item name="android:shadowColor">@color/shadow_black</item>
+        <item name="android:shadowDx">1.0</item>
+        <item name="android:shadowDy">1.0</item>
+        <item name="android:shadowRadius">1.0</item>
+        <item name="android:layout_centerInParent">true</item>
+    </style>
+    
+    <style name="normal_text_white" parent="@style/wrap">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:singleLine">true</item>
+    </style>
+
+    <style name="normal_text_black" parent="@style/normal_text_white">
+        <item name="android:textColor">@color/black</item>
+    </style>
+    
+    <style name="menu_item_text">
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_width">0.0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:background">@drawable/menu_pop_text_bg</item>
+        <item name="android:textColor">@color/menu_pop_text_color</item>
+        <item name="android:textSize">12.0sp</item>
+        <item name="android:drawablePadding">5.0dp</item>
+    </style>
+    
+    <style name="FindDialog">
+        <item name="android:windowEnterAnimation">@anim/find_dialog_enter</item>
+        <item name="android:windowExitAnimation">@anim/find_dialog_exit</item>
+    </style>
+    
+    <style name="about_text_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">26.0sp</item>
+    </style>
+    
+</resources>
