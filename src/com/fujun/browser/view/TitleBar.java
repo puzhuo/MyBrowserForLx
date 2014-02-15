@@ -10,12 +10,12 @@ import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
 import android.text.Selection;
+import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.inputmethod.InputMethodManager;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
@@ -41,7 +41,7 @@ public class TitleBar extends LinearLayout implements OnClickListener {
 	private RelativeLayout mRealUrlText;
 	private ImageButton mRefreshButton;
 	private TextView mTitleText;
-	private Button mSearchBtn;
+	private TextView mSearchBtn;
 	private ImageButton mMoreButton;
 	private Tab mTab;
 	private PopupWindow mUrlPopupWindow;
@@ -125,7 +125,7 @@ public class TitleBar extends LinearLayout implements OnClickListener {
 
 	private void init() {
 		LayoutInflater inflater = LayoutInflater.from(getContext());
-		inflater.inflate(R.layout.titlebar, this);
+		inflater.inflate(R.layout.titlebar_new, this);
 		setBackgroundResource(R.drawable.tabhost_background);
 
 		mProgressBar = (ProgressBar) findViewById(R.id.progress);
@@ -134,7 +134,7 @@ public class TitleBar extends LinearLayout implements OnClickListener {
 		mRealUrlText = (RelativeLayout) findViewById(R.id.titlebar_url_real);
 		mRefreshButton = (ImageButton) findViewById(R.id.titlebar_refresh);
 		mTitleText = (TextView) findViewById(R.id.titlebar_url);
-		mSearchBtn = (Button) findViewById(R.id.titlebar_search);
+		mSearchBtn = (TextView) findViewById(R.id.titlebar_search);
 		mMoreButton = (ImageButton) findViewById(R.id.titlebar_more_btn);
 
 		mFavButton.setOnClickListener(this);
@@ -262,12 +262,22 @@ public class TitleBar extends LinearLayout implements OnClickListener {
 		case R.id.titlebar_search: {
 			if (mMode == EDIT_MODE) {
 				String content = mUrlEditText.getText().toString();
-				String url = Utils.smartUrlFilter(content, false);
-				if (url == null) {
-					mTab.loadUrl(Constants.SEARCH_URL + content, true);
+				if (!TextUtils.isEmpty(content)) {
+					String url = Utils.smartUrlFilter(content, false);
+					if (url == null) {
+						mTab.loadUrl(Constants.SEARCH_URL + content, true);
+					} else {
+						mTab.loadUrl(url, true);
+					}
 				} else {
-					mTab.loadUrl(url, true);
+					Utils.showMessage(
+							getContext(),
+							getContext().getString(
+									R.string.titlebar_url_edit_hint));
 				}
+			} else {
+				Utils.showMessage(getContext(),
+						getContext().getString(R.string.titlebar_url_edit_hint));
 			}
 
 			mInputMethodManager.hideSoftInputFromWindow(

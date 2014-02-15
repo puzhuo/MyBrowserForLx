@@ -9,7 +9,7 @@
     <string name="cancel">取消</string>
     <string name="titlebar_input_url">输入网址</string>
     <string name="titlebar_search">搜索</string>
-    <string name="titlebar_goto">转到</string>
+    <string name="titlebar_goto">Go</string>
     <string name="titlebar_url_edit_hint">输入网址或搜索内容</string>
     <string name="test_words">测试用字</string>
     <string name="video_error">视频错误</string>
