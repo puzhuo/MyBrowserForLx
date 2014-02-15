@@ -1,4 +1,3 @@
-
 package com.fujun.browser.view;
 
 import android.annotation.TargetApi;
@@ -81,36 +80,36 @@ public class TitleBar extends LinearLayout implements OnClickListener {
 
 	public void setMode(int mode) {
 		switch (mode) {
-			case WEBVIEW_MODE:
-				mUrlEditText.clearFocus();
-				mTab.requestFocus();
-				mUrlEditText.setVisibility(View.GONE);
-				mFakeUrlText.setVisibility(View.GONE);
-				mRealUrlText.setVisibility(View.VISIBLE);
-				break;
-			case HOME_MODE:
-				mUrlEditText.clearFocus();
-				mTab.requestFocus();
-				mUrlEditText.setVisibility(View.GONE);
-				mFakeUrlText.setVisibility(View.VISIBLE);
-				mRealUrlText.setVisibility(View.GONE);
-				break;
-			case EDIT_MODE:
-				mUrlEditText.setVisibility(View.VISIBLE);
-				mFakeUrlText.setVisibility(View.GONE);
-				mRealUrlText.setVisibility(View.GONE);
-				mTab.clearFocus();
-				mUrlEditText.requestFocus();
-				mInputMethodManager.showSoftInput(mUrlEditText,
-						InputMethodManager.SHOW_FORCED);
-				String url = mTab.getCurrentUrl();
-				if (mTab.getWebViewVisible() && url != null) {
-					mUrlEditText.setText(url);
-					Selection.selectAll(mUrlEditText.getText());
-				} else {
-					mUrlEditText.setText("");
-				}
-				break;
+		case WEBVIEW_MODE:
+			mUrlEditText.clearFocus();
+			mTab.requestFocus();
+			mUrlEditText.setVisibility(View.GONE);
+			mFakeUrlText.setVisibility(View.GONE);
+			mRealUrlText.setVisibility(View.VISIBLE);
+			break;
+		case HOME_MODE:
+			mUrlEditText.clearFocus();
+			mTab.requestFocus();
+			mUrlEditText.setVisibility(View.GONE);
+			mFakeUrlText.setVisibility(View.VISIBLE);
+			mRealUrlText.setVisibility(View.GONE);
+			break;
+		case EDIT_MODE:
+			mUrlEditText.setVisibility(View.VISIBLE);
+			mFakeUrlText.setVisibility(View.GONE);
+			mRealUrlText.setVisibility(View.GONE);
+			mTab.clearFocus();
+			mUrlEditText.requestFocus();
+			mInputMethodManager.showSoftInput(mUrlEditText,
+					InputMethodManager.SHOW_FORCED);
+			String url = mTab.getCurrentUrl();
+			if (mTab.getWebViewVisible() && url != null) {
+				mUrlEditText.setText(url);
+				Selection.selectAll(mUrlEditText.getText());
+			} else {
+				mUrlEditText.setText("");
+			}
+			break;
 		}
 		mPreviousMode = mMode;
 		mMode = mode;
@@ -127,7 +126,7 @@ public class TitleBar extends LinearLayout implements OnClickListener {
 	private void init() {
 		LayoutInflater inflater = LayoutInflater.from(getContext());
 		inflater.inflate(R.layout.titlebar, this);
-		setBackgroundResource(R.drawable.urlbar_bg);
+		setBackgroundResource(R.drawable.tabhost_background);
 
 		mProgressBar = (ProgressBar) findViewById(R.id.progress);
 		mFavButton = (ImageButton) findViewById(R.id.titlebar_fav_btn);
@@ -227,71 +226,72 @@ public class TitleBar extends LinearLayout implements OnClickListener {
 	@Override
 	public void onClick(View v) {
 		switch (v.getId()) {
-			case R.id.url_menu_barcode:
+		case R.id.url_menu_barcode:
+			((HomeActivity) getContext()).startActivityForResult(new Intent(
+					getContext(), CaptureActivity.class),
+					Constants.REQUEST_GET_QRCODE);
+			dismissMorePopMenu();
+			break;
+		case R.id.titlebar_more_btn:
+			showMorePopup();
+			break;
+		case R.id.titlebar_refresh:
+			mTab.refresh();
+			break;
+		case R.id.titlebar_fav_btn:
+			if (!mTab.getWebViewVisible()) {
 				((HomeActivity) getContext()).startActivityForResult(
-						new Intent(getContext(), CaptureActivity.class),
-						Constants.REQUEST_GET_QRCODE);
-				dismissMorePopMenu();
-				break;
-			case R.id.titlebar_more_btn:
-				showMorePopup();
-				break;
-			case R.id.titlebar_refresh:
-				mTab.refresh();
-				break;
-			case R.id.titlebar_fav_btn:
-				if (!mTab.getWebViewVisible()) {
-					((HomeActivity) getContext()).startActivityForResult(
-							new Intent(getContext(), FavHisActivity.class),
-							Constants.FAV_ACTIVITY_REQUEST_CODE);
-					dismissUrlPopMenu();
-				} else if (mUrlPopupWindow != null && mUrlPopupWindow.isShowing()) {
-					dismissUrlPopMenu();
-				} else {
-					showUrlPopup();
-				}
-				break;
-			case R.id.titlebar_url_fake:
-			case R.id.titlebar_url_real:
-				setMode(EDIT_MODE);
-				break;
-			case R.id.url_menu_add_fav:
-				Utils.addToFav(getContext(), mTab.getCurrentTitle(),
-						mTab.getCurrentUrl(), mTab.getCurrentFav());
-				dismissUrlPopMenu();
-				break;
-			case R.id.titlebar_search: {
-				if (mMode == EDIT_MODE) {
-					String content = mUrlEditText.getText().toString();
-					String url = Utils.smartUrlFilter(content, false);
-					if (url == null) {
-						mTab.loadUrl(Constants.SEARCH_URL + content, true);
-					} else {
-						mTab.loadUrl(url, true);
-					}
-				}
-
-				mInputMethodManager.hideSoftInputFromWindow(mUrlEditText.getWindowToken(), 0);
-			}
-				break;
-			case R.id.url_menu_open_fav_his:
-				((Activity) getContext()).startActivityForResult(new Intent(
-						getContext(), FavHisActivity.class),
+						new Intent(getContext(), FavHisActivity.class),
 						Constants.FAV_ACTIVITY_REQUEST_CODE);
 				dismissUrlPopMenu();
-				break;
-			case R.id.url_menu_add_navi:
-				Utils.addToNavi(getContext(), mTab.getCurrentTitle(),
-						mTab.getCurrentUrl(), null);
+			} else if (mUrlPopupWindow != null && mUrlPopupWindow.isShowing()) {
 				dismissUrlPopMenu();
-				break;
-			case R.id.url_menu_send_desk:
-				Utils.createShortCut(getContext(), mTab.getCurrentTitle(),
-						mTab.getCurrentUrl());
-				dismissUrlPopMenu();
-				Toast.makeText(getContext(), R.string.send_desk_done,
-						Toast.LENGTH_SHORT).show();
-				break;
+			} else {
+				showUrlPopup();
+			}
+			break;
+		case R.id.titlebar_url_fake:
+		case R.id.titlebar_url_real:
+			setMode(EDIT_MODE);
+			break;
+		case R.id.url_menu_add_fav:
+			Utils.addToFav(getContext(), mTab.getCurrentTitle(),
+					mTab.getCurrentUrl(), mTab.getCurrentFav());
+			dismissUrlPopMenu();
+			break;
+		case R.id.titlebar_search: {
+			if (mMode == EDIT_MODE) {
+				String content = mUrlEditText.getText().toString();
+				String url = Utils.smartUrlFilter(content, false);
+				if (url == null) {
+					mTab.loadUrl(Constants.SEARCH_URL + content, true);
+				} else {
+					mTab.loadUrl(url, true);
+				}
+			}
+
+			mInputMethodManager.hideSoftInputFromWindow(
+					mUrlEditText.getWindowToken(), 0);
+		}
+			break;
+		case R.id.url_menu_open_fav_his:
+			((Activity) getContext()).startActivityForResult(new Intent(
+					getContext(), FavHisActivity.class),
+					Constants.FAV_ACTIVITY_REQUEST_CODE);
+			dismissUrlPopMenu();
+			break;
+		case R.id.url_menu_add_navi:
+			Utils.addToNavi(getContext(), mTab.getCurrentTitle(),
+					mTab.getCurrentUrl(), null);
+			dismissUrlPopMenu();
+			break;
+		case R.id.url_menu_send_desk:
+			Utils.createShortCut(getContext(), mTab.getCurrentTitle(),
+					mTab.getCurrentUrl());
+			dismissUrlPopMenu();
+			Toast.makeText(getContext(), R.string.send_desk_done,
+					Toast.LENGTH_SHORT).show();
+			break;
 		}
 	}
 }
