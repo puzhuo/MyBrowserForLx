@@ -23,7 +23,8 @@ public class TableView extends View {
 
 	private Context context;
 	
-	private List<String[]> contents;
+	private String[] contents;
+	private String[] urls;
 	private int contentsSize;
 	
 	public final static int SHADERMODE_HORIZONTAL = 0;
@@ -55,7 +56,7 @@ public class TableView extends View {
 			if(contents != null){
 				int clickX = (int) Math.floor(e.getX() / cellWidth);
 				int clickY = (int) Math.floor(e.getY() / cellHeight);
-				Toast.makeText(context, contents.get(clickX + (clickY * 4))[0] + ":" + (clickX + (clickY * 4)), Toast.LENGTH_SHORT).show();
+				Toast.makeText(context, urls[clickX + (clickY * 4)] + ":" + (clickX + (clickY * 4)), Toast.LENGTH_SHORT).show();
 			}
 			return true;
 		}
@@ -100,9 +101,10 @@ public class TableView extends View {
 		cellHeight = bound.height() + cellPadding + cellPadding;
 	}
 	
-	public void setContents(List<String[]> contents){
+	public void setContents(String[] contents, String[] urls){
 		this.contents = contents;
-		contentsSize = contents.size();
+		this.urls = urls;
+		contentsSize = contents.length;
 		
 		invalidate();
 	}
@@ -138,8 +140,8 @@ public class TableView extends View {
 				int top = (int) (Math.ceil(i / 4) * cellHeight) + getPaddingTop();
 				
 				paint.setShader(null);
-				paint.getTextBounds(contents.get(i)[1], 0, contents.get(i)[1].length(), bound);
-				canvas.drawText(contents.get(i)[1], left + (cellWidth - bound.width()) / 2, top + cellHeight - (cellHeight - bound.height()) / 2, paint);
+				paint.getTextBounds(contents[i], 0, contents[i].length(), bound);
+				canvas.drawText(contents[i], left + (cellWidth - bound.width()) / 2, top + cellHeight - (cellHeight - bound.height()) / 2, paint);
 				if(i < contentsSize - (contentsSize % 4)) drawLine(canvas, SHADERMODE_HORIZONTAL, left, top + cellHeight, cellWidth);
 				if((i + 1) % 4 != 0) drawLine(canvas, SHADERMODE_VERTICAL, left + cellWidth, top, cellHeight);
 			}
