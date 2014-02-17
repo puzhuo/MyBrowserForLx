@@ -62,6 +62,7 @@ import com.fujun.browser.constants.Constants;
 import com.fujun.browser.fragment.IndexFavFragment;
 import com.fujun.browser.fragment.IndexFavFragment.onFavClickListener;
 import com.fujun.browser.fragment.IndexFavFragment.onFavLongClickListener;
+import com.fujun.browser.fragment.IndexNaviFragmentEvenNew;
 import com.fujun.browser.fragment.IndexNaviFragmentNew;
 import com.fujun.browser.fragment.IndexNaviFragmentNew.NaviNewClickListener;
 import com.fujun.browser.model.FavItem;
@@ -90,7 +91,7 @@ public class HomeActivity extends BaseFragmentActivity implements
 
 	private ArrayList<Tab> mTabs;
 	private IndexFavFragment mIndexFavFragment;
-	private IndexNaviFragmentNew mIndexNaviFragment;
+	private IndexNaviFragmentEvenNew mIndexNaviFragment;
 
 	private LinearLayout mMenubarLayout;
 	private TextView mTabTextView;
@@ -391,8 +392,8 @@ public class HomeActivity extends BaseFragmentActivity implements
 					mIndexFavFragment.setOnFavLongClickListener(mFavLongClickListener);
 					return mIndexFavFragment;
 				case 0:
-					mIndexNaviFragment = new IndexNaviFragmentNew();
-					mIndexNaviFragment.setNaviNewClickListener(HomeActivity.this);
+					mIndexNaviFragment = new IndexNaviFragmentEvenNew();
+					//mIndexNaviFragment.setNaviNewClickListener(HomeActivity.this);
 					return mIndexNaviFragment;
 				default:
 					throw new IllegalArgumentException(
@@ -488,7 +489,7 @@ public class HomeActivity extends BaseFragmentActivity implements
 					if (mCurrentTab.getWebViewVisible()) {
 						mCurrentTab.refresh();
 					} else if (mIndexNaviFragment != null) {
-						mIndexNaviFragment.refresh();
+						//mIndexNaviFragment.refresh();
 					}
 					break;
 				case R.id.menu_pop_download:
@@ -528,7 +529,7 @@ public class HomeActivity extends BaseFragmentActivity implements
 		if (mCurrentTab.getWebViewVisible()) {
 			webView = mCurrentTab.getWebView();
 		} else if (mIndexNaviFragment != null) {
-			webView = mIndexNaviFragment.getWebView();
+			//webView = mIndexNaviFragment.getWebView();
 		}
 		if (webView != null) {
 			if (Build.VERSION.SDK_INT >= 21) {

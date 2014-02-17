@@ -25,4 +25,10 @@
         <attr name="title" format="string"/>
         <attr name="summary" format="string"/> 
     </declare-styleable>
+    
+    <declare-styleable name="TableView">
+        <attr name="android:textSize" />
+        <attr name="android:textColor" />
+        <attr name="cellPadding" format="dimension|reference" />
+    </declare-styleable>
 </resources>
