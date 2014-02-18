@@ -8,10 +8,10 @@ import android.widget.ImageView;
 
 public class FitWidthImageView extends ImageView {
 	
-	private int sourceWidth;
-	private int sourceHeight;
-	private int width;
-	private int height;
+	private float sourceWidth;
+	private float sourceHeight;
+	private float width = -1;
+	private float height = -1;
 
 	public FitWidthImageView(Context context){
 		this(context, null);
@@ -30,8 +30,12 @@ public class FitWidthImageView extends ImageView {
 	@Override
 	protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec){
 		super.onMeasure(widthMeasureSpec, heightMeasureSpec);
-		width = MeasureSpec.getSize(widthMeasureSpec);
-		height = MeasureSpec.getSize(heightMeasureSpec);
+		if(width != -1 || height != -1){
+			setMeasuredDimension((int) width, (int) height);
+		}else{
+			width = MeasureSpec.getSize(widthMeasureSpec);
+			height = MeasureSpec.getSize(heightMeasureSpec);
+		}
 	}
 	
 	@Override
@@ -42,8 +46,9 @@ public class FitWidthImageView extends ImageView {
 		
 		Matrix matrix = new Matrix();
 		float scale = width / sourceWidth;
-		matrix.setScale(scale, scale);
+		matrix.postScale(scale, scale, 0, 0);
 		setImageMatrix(matrix);
-		layout(getTop(), getLeft(), getRight(), (int) (getTop() + sourceHeight * scale));
+		height = sourceHeight * scale;
+		requestLayout();
 	}
 }
