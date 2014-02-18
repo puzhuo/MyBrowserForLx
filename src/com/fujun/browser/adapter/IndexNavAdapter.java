@@ -18,6 +18,7 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 public class IndexNavAdapter extends BaseAdapter{
 	
@@ -118,6 +119,31 @@ public class IndexNavAdapter extends BaseAdapter{
 			if(convertView == null){
 				convertView = inflater.inflate(R.layout.index_nav_item_bottomlist, null, false);
 			}
+			final ImageView icon = (ImageView) convertView.findViewById(R.id.icon);
+			new AsyncTask<Void, Void, Bitmap>(){
+				@Override
+				protected Bitmap doInBackground(Void... params){
+					Bitmap bitmap = null;
+					File image = new File(Environment.getExternalStorageDirectory(), Constants.SDCARD_HTML_FOLDER + "/" + item.getBottomList().get(position - 2).getIconPath());
+					if(image.exists()){
+						try{
+							bitmap = BitmapFactory.decodeFile(image.getPath());
+						}catch(Exception e){
+							e.printStackTrace();
+						}
+					}
+					
+					return bitmap;
+				}
+				@Override
+				protected void onPostExecute(Bitmap result){
+					if(result != null){
+						icon.setImageBitmap(result);
+					}
+				}
+			}.execute();
+			((TextView) convertView.findViewById(R.id.title)).setText(item.getBottomList().get(position - 2).getTitle());
+			((TextView) convertView.findViewById(R.id.subtitle)).setText(item.getBottomList().get(position - 2).getSubTitle());
 			break;
 		}
 		return convertView;

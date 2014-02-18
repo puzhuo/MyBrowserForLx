@@ -4,5 +4,54 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
     
+    <RelativeLayout
+        android:id="@+id/title_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        
+        <ImageView
+            android:id="@+id/icon"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignTop="@+id/title"
+            android:layout_alignBottom="@+id/title"
+            android:src="@drawable/check_box_bg"
+            android:scaleType="centerInside" />
+        
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/icon"
+            android:text="title"
+            android:textSize="15sp"
+            android:textColor="#666666" />
+        
+        <ImageView
+            android:id="@+id/arrow"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_alignTop="@+id/title"
+            android:layout_alignBottom="@+id/title"
+            android:scaleType="centerInside"
+            android:src="@drawable/indicator_open" />
+        
+        <TextView
+            android:id="@+id/subtitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/arrow"
+            android:gravity="center|right"
+            android:text="subtitle"
+            android:textSize="13sp"
+            android:textColor="#888888" />
+        
+    </RelativeLayout>
+    
+    <com.fujun.browser.view.TableContainer
+        android:id="@+id/table_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
 </LinearLayout>
