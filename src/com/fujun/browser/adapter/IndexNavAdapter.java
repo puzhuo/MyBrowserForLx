@@ -6,6 +6,7 @@ import com.kukuai.daohang.R;
 import com.fujun.browser.constants.Constants;
 import com.fujun.browser.model.NavJsonItem;
 import com.fujun.browser.model.entity.Table;
+import com.fujun.browser.view.FitWidthImageView;
 import com.fujun.browser.view.TableContainer;
 import com.fujun.browser.view.TableView;
 import com.fujun.browser.view.TableView.OnContentClickListener;
@@ -83,7 +84,7 @@ public class IndexNavAdapter extends BaseAdapter{
 			if(convertView == null){
 				convertView = inflater.inflate(R.layout.index_nav_item_ads, null ,false);
 			}
-			final ImageView adsImage = (ImageView) convertView.findViewById(R.id.image);
+			final FitWidthImageView adsImage = (FitWidthImageView) convertView.findViewById(R.id.image);
 			new AsyncTask<Void, Void, Bitmap>(){
 				@Override
 				protected Bitmap doInBackground(Void... params){
