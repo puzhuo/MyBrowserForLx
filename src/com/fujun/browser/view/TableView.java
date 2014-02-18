@@ -131,9 +131,11 @@ public class TableView extends View {
 		width = MeasureSpec.getSize(widthMeasureSpec);
 		height = MeasureSpec.getSize(heightMeasureSpec);
 		if(contents != null){
-			int intrinsicHeight = (int) ((Math.ceil(contentsSize / 4) + 1) * cellHeight) + getPaddingTop() + getPaddingBottom();
-			Log.d("intrinsicHeight", intrinsicHeight + "");
-			Log.d("height", height + "");
+			int heightCount = (int) (Math.ceil(contentsSize / 4) + 1);
+			if(contentsSize % 4 == 0){
+				heightCount --;
+			}
+			int intrinsicHeight = (int) (heightCount * cellHeight) + getPaddingTop() + getPaddingBottom();
 			if(height < intrinsicHeight || MeasureSpec.getMode(heightMeasureSpec) == MeasureSpec.UNSPECIFIED){
 				setMeasuredDimension(width, intrinsicHeight);
 			}

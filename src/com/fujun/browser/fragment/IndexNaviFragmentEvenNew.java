@@ -5,10 +5,6 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import com.fujun.browser.activity.HomeActivity;
 import com.fujun.browser.adapter.IndexNavAdapter;
 import com.fujun.browser.constants.Constants;

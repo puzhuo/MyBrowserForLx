@@ -7,6 +7,8 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import android.util.Log;
+
 import com.fujun.browser.model.NavJsonItem;
 import com.fujun.browser.model.entity.BottomListItem;
 import com.fujun.browser.model.entity.Table;
@@ -38,9 +40,11 @@ public class NavJSONUtil {
 				JSONArray contentJSON = bottomListJSON.getJSONObject(i).getJSONArray("content");
 				int contentLength = contentJSON.length();
 				Table[] tables = new Table[contentLength];
+				Log.d("lengthOfContents", contentLength + "");
 				for(int j = 0; j < contentLength; j++){
 					tables[j] = getTableFromJSON(contentJSON.getJSONObject(j).getJSONArray("table"));
-					tables[j].setTitle(contentJSON.getJSONObject(j).getString("title"));
+					tables[j].setTitle(contentJSON.getJSONObject(j).optString("title"));
+					tables[j].setTitleUrl(contentJSON.getJSONObject(j).optString("title_url"));
 				}
 				
 				bottomListItem.setTables(tables);

@@ -5,6 +5,7 @@ import java.io.File;
 import com.kukuai.daohang.R;
 import com.fujun.browser.constants.Constants;
 import com.fujun.browser.model.NavJsonItem;
+import com.fujun.browser.model.entity.Table;
 import com.fujun.browser.view.TableContainer;
 import com.fujun.browser.view.TableView;
 import com.fujun.browser.view.TableView.OnContentClickListener;
@@ -19,6 +20,7 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 public class IndexNavAdapter extends BaseAdapter{
@@ -155,8 +157,33 @@ public class IndexNavAdapter extends BaseAdapter{
 			((TextView) convertView.findViewById(R.id.title)).setText(item.getBottomList().get(position - 2).getTitle());
 			((TextView) convertView.findViewById(R.id.subtitle)).setText(item.getBottomList().get(position - 2).getSubTitle());
 			
-			final TableContainer tableContainer = (TableContainer) convertView.findViewById(R.id.table_container);
-			tableContainer.setTables(item.getBottomList().get(position - 2).getTables(), onContentClickListener);
+			final LinearLayout tableContainer = (LinearLayout) convertView.findViewById(R.id.table_container);
+			if(tableContainer.getChildCount() > 0){
+				tableContainer.removeAllViews();
+			}
+			final Table[] tables = item.getBottomList().get(position - 2).getTables();
+			for(int i = 0; i < tables.length; i++){
+				if(tables[i].getTitle() != null && tables[i].getTitle().length() > 0){
+					View setionTitle = inflater.inflate(R.layout.index_nav_item_bottomlist_item_title, null, false);
+					((TextView) setionTitle.findViewById(R.id.setion_title)).setText(tables[i].getTitle());
+					
+					final int ii = i;
+					setionTitle.setClickable(true);
+					setionTitle.setOnClickListener(new OnClickListener(){
+						@Override
+						public void onClick(View v){
+							if(onContentClickListener != null && tables[ii].getTitleUrl() != null){
+								onContentClickListener.onContentClick(tables[ii].getTitleUrl());
+							}
+						}
+					});
+					tableContainer.addView(setionTitle);
+				}
+				TableView tableViewItem = new TableView(tableContainer.getContext());
+				tableViewItem.setContents(tables[i].getContents(), tables[i].getUrls());
+				tableViewItem.setOnContentClickListener(onContentClickListener);
+				tableContainer.addView(tableViewItem);
+			}
 			
 			final View divider = convertView.findViewById(R.id.divider);
 			

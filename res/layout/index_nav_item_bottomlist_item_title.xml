@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="3dip"
+    android:paddingBottom="3dip"
+    android:paddingLeft="5dip"
+    android:orientation="horizontal" >
+    
+    <View
+        android:layout_width="5dip"
+        android:layout_height="match_parent"
+        android:background="#449922" />
+    
+    <TextView
+        android:id="@+id/setion_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="3dip"
+        android:text="section_title"
+        android:textSize="15sp"
+        android:textColor="#449922" />
+
+</LinearLayout>

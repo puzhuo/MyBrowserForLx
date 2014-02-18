@@ -6,6 +6,7 @@ import com.kukuai.daohang.R;
 
 import android.content.Context;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.widget.LinearLayout;
 
 public class TableContainer extends LinearLayout{
@@ -26,12 +27,12 @@ public class TableContainer extends LinearLayout{
 		if(tables.length > 0){
 			for(int i = 0; i < tables.length; i++){
 				if(tables[i].getTitle().length() > 0){
-					
+					Log.d("tableTitle", tables[i].getTitle());
 				}
 				TableView tableView = new TableView(getContext());
 				tableView.setContents(tables[i].getContents(), tables[i].getUrls());
 				tableView.setOnContentClickListener(onContentClickListener);
-				addView(tableView);
+				addView(tableView, i);
 			}
 		}
 	}

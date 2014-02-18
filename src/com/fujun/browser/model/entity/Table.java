@@ -3,6 +3,7 @@ package com.fujun.browser.model.entity;
 public class Table {
 	
 	private String title;
+	private String titleUrl;
 	
 	private String[] urls;
 	private String[] contents;
@@ -13,6 +14,12 @@ public class Table {
 	}
 	public void setTitle(String title) {
 		this.title = title;
+	}
+	public String getTitleUrl(){
+		return titleUrl;
+	}
+	public void setTitleUrl(String titleUrl){
+		this.titleUrl = titleUrl;
 	}
 	public String[] getUrls() {
 		return urls;
