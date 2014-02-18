@@ -25,4 +25,7 @@
     <dimen name="tab_center_arrow_margin_top">16.0dp</dimen>
     <dimen name="navi_item_icon_size">50.0dp</dimen>
     <dimen name="preference_widget_width">56dp</dimen>
+    
+    <dimen name="nav_page_bottomlist_table_cell_padding">10dip</dimen>
+    <dimen name="nav_page_bottomlist_table_text_size">17sp</dimen>
 </resources>

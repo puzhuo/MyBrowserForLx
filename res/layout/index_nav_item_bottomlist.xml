@@ -6,6 +6,8 @@
     
     <RelativeLayout
         android:id="@+id/title_layout"
+        android:paddingTop="3dip"
+        android:paddingBottom="3dip"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         
@@ -24,7 +26,7 @@
             android:layout_height="wrap_content"
             android:layout_toRightOf="@+id/icon"
             android:text="title"
-            android:textSize="15sp"
+            android:textSize="16sp"
             android:textColor="#666666" />
         
         <ImageView
@@ -44,10 +46,16 @@
             android:layout_toLeftOf="@+id/arrow"
             android:gravity="center|right"
             android:text="subtitle"
-            android:textSize="13sp"
+            android:textSize="14sp"
             android:textColor="#888888" />
         
     </RelativeLayout>
+    
+    <View 
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="#999999"/>
     
     <com.fujun.browser.view.TableContainer
         android:id="@+id/table_container"

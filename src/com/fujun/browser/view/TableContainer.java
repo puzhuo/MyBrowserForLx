@@ -2,6 +2,7 @@ package com.fujun.browser.view;
 
 import com.fujun.browser.model.entity.Table;
 import com.fujun.browser.view.TableView.OnContentClickListener;
+import com.kukuai.daohang.R;
 
 import android.content.Context;
 import android.util.AttributeSet;

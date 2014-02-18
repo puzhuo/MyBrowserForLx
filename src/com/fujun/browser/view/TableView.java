@@ -59,10 +59,11 @@ public class TableView extends View {
 			if(contents != null){
 				int clickX = (int) Math.floor(e.getX() / cellWidth);
 				int clickY = (int) Math.floor(e.getY() / cellHeight);
-				if(onContentClickListener != null){
-					onContentClickListener.onContentClick(urls[clickX + (clickY * 4)]);
+				
+				int position = clickX + (clickY * 4);
+				if(onContentClickListener != null && position < urls.length){
+					onContentClickListener.onContentClick(urls[position]);
 				}
-				//Toast.makeText(context, urls[clickX + (clickY * 4)] + ":" + (clickX + (clickY * 4)), Toast.LENGTH_SHORT).show();
 			}
 			return true;
 		}
@@ -94,9 +95,9 @@ public class TableView extends View {
 		paint = new Paint(Paint.ANTI_ALIAS_FLAG);
 		
 		TypedArray ta = context.obtainStyledAttributes(attrs, R.styleable.TableView);
-		paint.setTextSize(ta.getDimension(R.styleable.TableView_android_textSize, 10));
-		paint.setColor(ta.getColor(R.styleable.TableView_android_textColor, 0xFF000000));
-		cellPadding = ta.getDimensionPixelOffset(R.styleable.TableView_cellPadding, 0);
+		paint.setTextSize(ta.getDimension(R.styleable.TableView_android_textSize, context.getResources().getDimension(R.dimen.nav_page_bottomlist_table_text_size)));
+		paint.setColor(ta.getColor(R.styleable.TableView_android_textColor, 0xFF666666));
+		cellPadding = ta.getDimensionPixelOffset(R.styleable.TableView_cellPadding, context.getResources().getDimensionPixelOffset(R.dimen.nav_page_bottomlist_table_cell_padding));
 		ta.recycle();
 		
 		horizontalLine = new LinearGradient(0, 0, 4, 0, new int[]{0xFF999999, 0xFF999999, 0x0, 0x0}, new float[]{0F, 0.5F, 0.5F, 1F}, TileMode.REPEAT);

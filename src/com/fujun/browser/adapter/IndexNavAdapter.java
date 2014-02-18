@@ -5,6 +5,7 @@ import java.io.File;
 import com.kukuai.daohang.R;
 import com.fujun.browser.constants.Constants;
 import com.fujun.browser.model.NavJsonItem;
+import com.fujun.browser.view.TableContainer;
 import com.fujun.browser.view.TableView;
 import com.fujun.browser.view.TableView.OnContentClickListener;
 
@@ -119,6 +120,15 @@ public class IndexNavAdapter extends BaseAdapter{
 			if(convertView == null){
 				convertView = inflater.inflate(R.layout.index_nav_item_bottomlist, null, false);
 			}
+			
+			if(position == 2){
+				convertView.setBackgroundResource(R.drawable.bottomlist_bg_head);
+			}else if(position == getCount() - 1){
+				convertView.setBackgroundResource(R.drawable.bottomlist_bg_foot);
+			}else{
+				convertView.setBackgroundResource(R.drawable.bottomlist_bg_middle);
+			}
+			
 			final ImageView icon = (ImageView) convertView.findViewById(R.id.icon);
 			new AsyncTask<Void, Void, Bitmap>(){
 				@Override
@@ -144,6 +154,30 @@ public class IndexNavAdapter extends BaseAdapter{
 			}.execute();
 			((TextView) convertView.findViewById(R.id.title)).setText(item.getBottomList().get(position - 2).getTitle());
 			((TextView) convertView.findViewById(R.id.subtitle)).setText(item.getBottomList().get(position - 2).getSubTitle());
+			
+			final TableContainer tableContainer = (TableContainer) convertView.findViewById(R.id.table_container);
+			tableContainer.setTables(item.getBottomList().get(position - 2).getTables(), onContentClickListener);
+			
+			final View divider = convertView.findViewById(R.id.divider);
+			
+			convertView.findViewById(R.id.title_layout).setOnClickListener(new OnClickListener(){
+				@Override
+				public void onClick(View v){
+					if(tableContainer.getVisibility() == View.GONE){
+						tableContainer.setVisibility(View.VISIBLE);
+						if(position == getCount() - 1){
+							divider.setVisibility(View.VISIBLE);
+						}
+					}else{
+						tableContainer.setVisibility(View.GONE);
+						if(position == getCount() - 1){
+							divider.setVisibility(View.GONE);
+						}
+					}
+				}
+			});
+			
+			
 			break;
 		}
 		return convertView;

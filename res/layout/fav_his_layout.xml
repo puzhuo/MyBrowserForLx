@@ -6,8 +6,10 @@
     
     <LinearLayout
         style="@style/fillx"
+        android:paddingTop="10dip"
+        android:paddingBottom="10dip"
         android:orientation="horizontal"
-        android:background="@drawable/urlbar_bg" >
+        android:background="@drawable/tabhost_background" >
 
         <TextView
             android:id="@+id/fav_text"
