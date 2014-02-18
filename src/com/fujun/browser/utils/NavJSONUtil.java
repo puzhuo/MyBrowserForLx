@@ -28,7 +28,7 @@ public class NavJSONUtil {
 			
 			//bottomlist
 			List<BottomListItem> bottomListItems = new ArrayList<BottomListItem>();
-			JSONArray bottomListJSON = jsonObject.getJSONArray("bottomlist");
+			JSONArray bottomListJSON = jsonObject.getJSONArray("bottomList");
 			int length = bottomListJSON.length();
 			for(int i = 0; i < length; i++){
 				BottomListItem bottomListItem = new BottomListItem();
@@ -47,6 +47,8 @@ public class NavJSONUtil {
 				
 				bottomListItems.add(bottomListItem);
 			}
+			
+			item.setBottomList(bottomListItems);
 			
 		}catch(JSONException e){
 			e.printStackTrace();

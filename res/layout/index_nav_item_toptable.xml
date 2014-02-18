@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="5dip"
+    android:paddingLeft="5dip"
+    android:paddingRight="5dip"
+    android:orientation="vertical" >
+    
+    <com.fujun.browser.view.TableView
+        xmlns:tableView="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/table"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:paddingTop="5dip"
+        android:paddingLeft="5dip"
+        android:paddingRight="5dip"
+        android:textSize="17sp"
+        android:textColor="#666666"
+        tableView:cellPadding="10dip"
+        android:background="@drawable/common_paragraph_bg_d" />
+        
+
+</LinearLayout>

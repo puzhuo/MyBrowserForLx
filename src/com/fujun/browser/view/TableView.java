@@ -1,7 +1,5 @@
 package com.fujun.browser.view;
 
-import java.util.List;
-
 import com.kukuai.daohang.R;
 
 import android.content.Context;
@@ -45,6 +43,11 @@ public class TableView extends View {
 	
 	private Rect bound;
 	
+	private OnContentClickListener onContentClickListener;
+	public interface OnContentClickListener{
+		public void onContentClick(String url);
+	};
+	
 	private GestureDetector gestureDetector;
 	private SimpleOnGestureListener simpleGestureListener = new SimpleOnGestureListener(){
 		@Override
@@ -56,7 +59,10 @@ public class TableView extends View {
 			if(contents != null){
 				int clickX = (int) Math.floor(e.getX() / cellWidth);
 				int clickY = (int) Math.floor(e.getY() / cellHeight);
-				Toast.makeText(context, urls[clickX + (clickY * 4)] + ":" + (clickX + (clickY * 4)), Toast.LENGTH_SHORT).show();
+				if(onContentClickListener != null){
+					onContentClickListener.onContentClick(urls[clickX + (clickY * 4)]);
+				}
+				//Toast.makeText(context, urls[clickX + (clickY * 4)] + ":" + (clickX + (clickY * 4)), Toast.LENGTH_SHORT).show();
 			}
 			return true;
 		}
@@ -101,6 +107,14 @@ public class TableView extends View {
 		cellHeight = bound.height() + cellPadding + cellPadding;
 	}
 	
+	public void setOnContentClickListener(OnContentClickListener onContentClickListener){
+		this.onContentClickListener = onContentClickListener;
+	}
+	
+	public OnContentClickListener getOnContentClickListener(){
+		return onContentClickListener;
+	}
+	
 	public void setContents(String[] contents, String[] urls){
 		this.contents = contents;
 		this.urls = urls;
@@ -142,7 +156,10 @@ public class TableView extends View {
 				paint.setShader(null);
 				paint.getTextBounds(contents[i], 0, contents[i].length(), bound);
 				canvas.drawText(contents[i], left + (cellWidth - bound.width()) / 2, top + cellHeight - (cellHeight - bound.height()) / 2, paint);
-				if(i < contentsSize - (contentsSize % 4)) drawLine(canvas, SHADERMODE_HORIZONTAL, left, top + cellHeight, cellWidth);
+				int offset = contentsSize % 4;
+				if(offset == 0) offset = 4;
+				
+				if(i < contentsSize - offset) drawLine(canvas, SHADERMODE_HORIZONTAL, left, top + cellHeight, cellWidth);
 				if((i + 1) % 4 != 0) drawLine(canvas, SHADERMODE_VERTICAL, left + cellWidth, top, cellHeight);
 			}
 		}

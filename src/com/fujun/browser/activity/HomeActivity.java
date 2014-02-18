@@ -73,12 +73,13 @@ import com.fujun.browser.view.FindDialog;
 import com.fujun.browser.view.MyViewPager;
 import com.fujun.browser.view.MyViewPager.onMoveToWebViewListener;
 import com.fujun.browser.view.SlidingWebView.OnWebViewMoveListener;
+import com.fujun.browser.view.TableView.OnContentClickListener;
 import com.fujun.browser.view.TitleBar;
 import com.kukuai.daohang.R;
 
 public class HomeActivity extends BaseFragmentActivity implements
 		onMoveToWebViewListener, onFavClickListener, OnClickListener, OnWebViewMoveListener,
-		NaviNewClickListener {
+		NaviNewClickListener, OnContentClickListener {
 
 	private MyViewPager mViewPager;
 	private BrowserPagerAdapter mAdapter;
@@ -963,6 +964,14 @@ public class HomeActivity extends BaseFragmentActivity implements
 			mMenubarStop.setVisibility(View.GONE);
 		}
 		onWebViewMove();
+	}
+
+	@Override
+	public void onContentClick(String url) {
+		if (mCurrentTab != null) {
+			mCurrentTab.setClearHistory(true);
+			mCurrentTab.loadUrl(url, true);
+		}
 	}
 
 }
