@@ -27,5 +27,5 @@
     <dimen name="preference_widget_width">56dp</dimen>
     
     <dimen name="nav_page_bottomlist_table_cell_padding">10dip</dimen>
-    <dimen name="nav_page_bottomlist_table_text_size">17sp</dimen>
+    <dimen name="nav_page_bottomlist_table_text_size">15sp</dimen>
 </resources>
